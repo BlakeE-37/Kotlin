@@ -109,4 +109,26 @@ val snack9 = VendingMachine()
     snack8.printLocation()
     snack9.printLocation()
     println("\n----------------------------------")
+
+    //Asking for and paying for items in the vending machine
+    //------------------------------------------------------
+    print("How much money would you like to insert? ")
+    val userMoney = readLine()
+    println("You have inserted $$userMoney\n")
+    println("type the location of the item you would like to buy? ")
+    val itemLocation = readLine()
+    
+    val snack = when (itemLocation){
+        "A1" -> snack1.snack
+        "A2" -> snack2.snack
+        "A3" -> snack3.snack
+        "B1" -> snack4.snack
+        "B2" -> snack5.snack
+        "B3" -> snack6.snack
+        "C1" -> snack7.snack
+        "C2" -> snack8.snack
+        "C3" -> snack9.snack
+        else -> "Nothing"
+    }
+println("You received $snack")
 }
