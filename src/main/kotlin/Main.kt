@@ -1,3 +1,5 @@
+import kotlin.math.round
+
 class VendingMachine {
     var snack = ""
     var price = 0.0
@@ -113,7 +115,7 @@ val snack9 = VendingMachine()
     //Asking for and paying for items in the vending machine
     //------------------------------------------------------
     print("How much money would you like to insert? ")
-    val userMoney = readLine()
+    val userMoney = readLine()!!.toDouble()
     println("You have inserted $$userMoney\n")
     println("type the location of the item you would like to buy? ")
     val itemLocation = readLine()
@@ -130,5 +132,25 @@ val snack9 = VendingMachine()
         "C3" -> snack9.snack
         else -> "Nothing"
     }
-println("You received $snack")
+    val price: Double = when (itemLocation) {
+        "A1" -> snack1.price
+        "A2" -> snack2.price
+        "A3" -> snack3.price
+        "B1" -> snack4.price
+        "B2" -> snack5.price
+        "B3" -> snack6.price
+        "C1" -> snack7.price
+        "C2" -> snack8.price
+        "C3" -> snack9.price
+        else -> 0.0
+    }
+    if (userMoney < price){
+        println("Not enough money inserted")
+    } else{
+        println("You received $snack")
+        val change = userMoney - price
+        round(change * 100) / 100
+        println("Your change is $$change")
+    }
+
 }
