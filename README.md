@@ -5,7 +5,7 @@ is a console app that simulates a vending machine. It asks how much money you wo
 to insert. You then type in the code for whatever item you want.
 
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/fx5PDy0xqxI)
 
 # Development Environment
 * IntelliJ IDEA
